@@ -75,10 +75,10 @@ clickLocations = [];
 
 function logClicks(x,y) {
   clickLocations.push(
-    {
-      "x": x,
-      "y": y
-    }
+  {
+    "x": x,
+    "y": y
+  }
   );
   console.log("x location: " + x + "; y location: " + y);
 }
@@ -118,7 +118,7 @@ function initializeMap() {
   written for bio, education, and work.
   */
   function locationFinder() {
-    
+
     // initializes an empty array
     var locations = [];
 
@@ -169,7 +169,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -238,5 +238,5 @@ window.addEventListener('load', initializeMap);
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
  //Make sure the map bounds get updated on page resize
-  map.fitBounds(mapBounds);
+ map.fitBounds(mapBounds);
 });
